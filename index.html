@@ -9,11 +9,18 @@
         <meta name="author" content="Mr.Spade">
         <meta name="description" content="这是Mr.Spade的个人网站。">
         <link href="styles/style.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="images/spade.ico" type="image/x-icon">
         <title>Mr.Spade</title>
     </head>
     <h1>空弦</h1>
+    <!--<h2>空弦</h2>
+    <h3>空弦</h3>
+    <h4>空弦</h4>
+    <h5>空弦</h5>
+    <h6>空弦</h6>-->
     <body>
         <img id="kxkx" src="images/kx.jpg" alt="空弦">
         <p>
@@ -86,25 +93,64 @@
         </blockquote>
         <a href="https://baike.baidu.com/item/%E7%A9%BA%E5%BC%A6/55667783?fr=aladdin">百度百科</a>
         <button>切换用户</button>
+        <hr>
         <pre><code>
-#include<cstdio>
+#include&lt;cstdio&gt;
 signed main()
 {
     printf("Hello,world!");
 }
         </code></pre>
-            
-            <p>请不要使用 <code>&lt;font&gt;</code> 、 <code>&lt;center&gt;</code> 等表象元素。</p>
-            
-            <p>在上述的 JavaScript 示例中，<var>para</var> 表示一个段落元素。</p>
-            
-            
-            <p>按 <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd> 选择全部内容。</p>
-            
-            <pre>$ <kbd>ping mozilla.org</kbd>
-            <samp>PING mozilla.org (63.245.215.20): 56 data bytes
-            64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
-        <time datetime="2021-11-24">2021年11月24日</time>        
+        <p>请不要使用 <code>&lt;font&gt;</code> 、 <code>&lt;center&gt;</code> 等表象元素。</p>
+        <p>在上述的 JavaScript 示例中，<var>para</var> 表示一个段落元素。</p>
+        <p>按 <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd> 选择全部内容。</p>
+        <pre>$ <kbd>ping mozilla.org</kbd>
+        <samp>PING mozilla.org (63.245.215.20): 56 data bytes 64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+        <div>一个普通的块元素<span>中的一个普通的内联元素</span>。</div>
+        <table>
+            <caption>A summary of the UK's most famous punk bands</caption>
+            <thead>
+              <tr>
+                <th scope="col">Band</th>
+                <th scope="col">Year formed</th>
+                <th scope="col">No. of Albums</th>
+                <th scope="col">Most famous song</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Buzzcocks</th>
+                <td>1976</td>
+                <td>9</td>
+                <td>Ever fallen in love (with someone you shouldn't've)</td>
+              </tr>
+              <tr>
+                <th scope="row">The Clash</th>
+                <td>1976</td>
+                <td>6</td>
+                <td>London Calling</td>
+              </tr>
+          
+                ... some rows removed for brevity
+          
+              <tr>
+                <th scope="row">The Stranglers</th>
+                <td>1974</td>
+                <td>17</td>
+                <td>No More Heroes</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="2">Total albums</th>
+                <td colspan="2">77</td>
+              </tr>
+            </tfoot>
+          </table>
+        <iframe src="article/art.html" width="75%" class="article"></iframe>
+        <p class="result"></p>
+        <br>
+        <time datetime="2021-11-24">2021年11月24日</time>   
         <address>
             <p>Page written by <a href="https://cnblogs.com/Mr-Spade">Mr_Spade</a>.</p>
           </address>

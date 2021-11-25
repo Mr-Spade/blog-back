@@ -17,13 +17,30 @@ function setUserName() {
     localStorage.setItem('name', myName);
     myHeading.textContent = '空弦酷毙了，' + myName;
   }
-  if(!localStorage.getItem('name')) {
-    setUserName();
-  } else {
-    let storedName = localStorage.getItem('name');
-    myHeading.textContent = '空弦酷毙了，' + storedName;
-  }
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  let storedName = localStorage.getItem('name');
+  myHeading.textContent = '空弦酷毙了，' + storedName;
+}
 
-  myButton.onclick = function() {
-    setUserName();
- }
+myButton.onclick = function() {
+  setUserName();
+}
+
+
+function reset_height(e)
+{
+  //if(e.contentDocument.body.clientHeight)
+  //  e.height=1000;
+  //e.src="article/art2.html";
+  e.style.height = e.contentDocument.body.scrollHeight;
+  let res=document.querySelector('.result');
+  res.textContent=e;
+}
+
+let my_article=document.querySelectorAll('.article');
+for(let i=0;i<my_article.length;i++)
+{
+  reset_height(my_article[i]);
+}
