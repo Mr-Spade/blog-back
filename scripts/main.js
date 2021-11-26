@@ -34,8 +34,8 @@ myButton.onclick = function() {
   //if(e.contentDocument.body.clientHeight)
   //  e.height=1000;
   //e.src="article/art2.html";
-  let e=document.querySelector('.article');
-  e.height = e.contentDocument.body.scrollHeight;
+  // let e=document.querySelector('.article');
+  // e.height = e.contentDocument.body.scrollHeight;
   // let res=document.querySelector('.result');
   // res.textContent=location.pathname;
 // }
@@ -45,3 +45,10 @@ myButton.onclick = function() {
 // {
 //   reset_height(my_article[i]);
 // }
+let art=document.createElement('iframe');
+art.width="80%";
+art.className='article';
+art.src="article/art.html";
+art.height=art.contentDocument.body.scrollHeight;
+let bd=document.querySelector('body');
+bd.appendChild(art);
