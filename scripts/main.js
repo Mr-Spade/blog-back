@@ -34,7 +34,7 @@ myButton.onclick = function() {
   //if(e.contentDocument.body.clientHeight)
   //  e.height=1000;
   //e.src="article/art2.html";
-  e=document.querySelector('.article');
+  let e=document.querySelector('.article');
   e.height = e.contentDocument.body.scrollHeight;
   // let res=document.querySelector('.result');
   // res.textContent=location.pathname;
