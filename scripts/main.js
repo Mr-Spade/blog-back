@@ -29,18 +29,19 @@ myButton.onclick = function() {
 }
 
 
-function reset_height(e)
-{
+// function reset_height(e)
+// {
   //if(e.contentDocument.body.clientHeight)
   //  e.height=1000;
   //e.src="article/art2.html";
-  e.style.height = e.contentDocument.body.scrollHeight;
-  let res=document.querySelector('.result');
-  res.textContent=e;
-}
+  e=document.querySelector('.article');
+  e.height = e.contentDocument.body.scrollHeight;
+  // let res=document.querySelector('.result');
+  // res.textContent=location.pathname;
+// }
 
-let my_article=document.querySelectorAll('.article');
-for(let i=0;i<my_article.length;i++)
-{
-  reset_height(my_article[i]);
-}
+// let my_article=document.querySelectorAll('.article');
+// for(let i=0;i<my_article.length;i++)
+// {
+//   reset_height(my_article[i]);
+// }
