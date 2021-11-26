@@ -45,10 +45,10 @@ myButton.onclick = function() {
 // {
 //   reset_height(my_article[i]);
 // }
+let bd=document.querySelector('body');
+bd.appendChild(art);
 let art=document.createElement('iframe');
 art.width="80%";
 art.className='article';
 art.src="article/art.html";
 art.height=art.contentDocument.body.scrollHeight;
-let bd=document.querySelector('body');
-bd.appendChild(art);
