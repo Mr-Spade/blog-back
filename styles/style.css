@@ -35,6 +35,12 @@ li
   /*列表项上下有适当间距*/
 }
 
+iframe
+{
+  border: medium none;
+}
+/*去掉iframe的边框*/
+
 .f-bu
 {
   cursor: pointer;
@@ -54,6 +60,7 @@ li
   opacity: 60%;
   background-color: white;
 }
+/*左侧导航栏*/
 
 .title-img
 {
@@ -68,6 +75,7 @@ li
   padding-right: 7.5%;
   text-align: center;
 }
+/*签名*/
 
 .first-list
 {
@@ -79,14 +87,59 @@ li
   font-size: 1.5vw;
 }
 
-.post
+.main-box
 {
   float: right;
 
-  margin: 5%;
-  width: 50%;
-  height: 1000px;
+  margin: 0%;
+  padding: 2%;
+  width: 72%;
+  
+  /*background-color: white;*/
+}
+/*侧边内容放置处*/
+
+.post
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  width: 80%;
+  /*min-height: 10rem;*/
 
   opacity: 60%;
   background-color: white;
+  border-radius: 2rem;
+}
+
+.post-title
+{
+  font-size: 3vw;
+
+  margin: 0%;
+  padding: 0%;
+  padding-bottom: 0.5rem;
+}
+/*post块标题*/
+
+.post-ab
+{
+  font-size: 1.5vw;
+
+  margin: 0%;
+  padding: 0%;
+}
+
+.post-date
+{
+  font-size: 1.2vw;
+
+  margin: 0%;
+  padding: 0%;
+  padding-top: 0.5rem;
 }
