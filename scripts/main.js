@@ -7,4 +7,7 @@ let sig=[
 document.querySelector('.signature').textContent=sig[Math.floor(Math.random()*sig.length)];
 //随机一条签名
 
-//$(document).ready(function(){$(".title-img").click(function(){$(".signature").slideToggle();});});
+$(document).ready(function(){$(".toggle").next().hide();});
+//侧边列表默认收缩
+$(document).ready(function(){$(".toggle").click(function(){$(this).next().slideToggle();});});
+//侧边列表点击可以展开/收缩子项

@@ -22,6 +22,26 @@ body
   height: 100%;
 }
 
+ul
+{
+  list-style-type: none;
+  /*去掉列表开头的点*/
+}
+
+li
+{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /*列表项上下有适当间距*/
+}
+
+.f-bu
+{
+  cursor: pointer;
+  /*鼠标经过会变为手型*/
+}
+/*所有功能性文字都应为该类*/
+
 .navigation
 {
   position: fixed;
@@ -38,8 +58,6 @@ body
 .title-img
 {
   width: 100%;
-
-  cursor: pointer;
 }
 
 .signature
@@ -49,6 +67,16 @@ body
   padding-left: 7.5%;
   padding-right: 7.5%;
   text-align: center;
+}
+
+.first-list
+{
+  font-size: 1.8vw;
+}
+
+.second-list
+{
+  font-size: 1.5vw;
 }
 
 .post
