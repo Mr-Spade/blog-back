@@ -32,7 +32,9 @@ function get_repath()//找到当前路径相对于主站的位置
 function adjust_height(tmp)//动态调整iframe的高度
 {
   if(tmp.contentDocument!==null)//有一个鬼畜的问题，本地的contentDocument总是null
-    tmp.height=tmp.contentDocument.body.scrollHeight+0.01*tmp.width;
+    tmp.height=tmp.contentDocument.body.scrollHeight;
+  else
+    tmp.height=1000;
 }
 
 (function write_navigation()
