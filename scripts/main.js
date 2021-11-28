@@ -35,17 +35,6 @@ function adjust_height(tmp)//动态调整iframe的高度
     tmp.height=tmp.contentDocument.body.scrollHeight+0.01*tmp.width;
 }
 
-// let onresize_cnt=0;//记录缩放次数特判最开始的加载
-// window.onresize=function()
-// {
-//   if(++onresize_cnt>1)
-//   {
-//     let tmp=document.querySelectorAll(".post-box");
-//     for(let f in tmp)
-//       adjust_height(f);
-//   }
-// }
-
 (function write_navigation()
 {
   //let my_navigation=document.createElement("div");
@@ -147,3 +136,14 @@ add_child(document.querySelector("body"),"div","main-box","");
 //     location.pathname="/study/OI";
 //   }
 // };
+
+// let onresize_cnt=0;//记录缩放次数特判最开始的加载
+window.onresize=function()
+{
+  // if(++onresize_cnt>1)
+  // {
+  let tmp=document.querySelectorAll(".post-box");
+  for(let f in tmp)
+    adjust_height(f);
+  // }
+}
