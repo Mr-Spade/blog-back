@@ -22,5 +22,9 @@ function get_value(tar_id)//从location.search中提取tar_id的值
     {
         this.height=this.contentDocument.body.scrollHeight+1;
     };
+    my_post_box.onresize=function()
+    {
+        this.height=this.contentDocument.body.scrollHeight+1;
+    };
     add_child(my_post,"div","post-date","最后编辑于："+oi_postdata[get_value("postid")][2]);
 })();
