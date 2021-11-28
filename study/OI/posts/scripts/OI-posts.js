@@ -20,11 +20,11 @@ function get_value(tar_id)//从location.search中提取tar_id的值
     my_post_box.src="data/"+oi_postdata[get_value("postid")][0]+".html";
     my_post_box.onload=function()
     {
-        this.height=this.contentDocument.body.scrollHeight+1;
+        this.height=this.contentDocument.body.scrollHeight+0.01*this.width;
     };
     my_post_box.onresize=function()
     {
-        this.height=this.contentDocument.body.scrollHeight+1;
+        this.height=this.contentDocument.body.scrollHeight+0.01*this.width;
     };
     add_child(my_post,"div","post-date","最后编辑于："+oi_postdata[get_value("postid")][2]);
 })();
