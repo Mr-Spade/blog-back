@@ -8,17 +8,19 @@ function writepost(postdata)
     // let my_post=document.createElement("div");
     // my_post.className="post";
     let my_post=add_child(document.querySelector(".main-box"),"div","post","");
-    let my_post_title=add_child(my_post,"h1","post-title f-bu",postdata[0]);
-    let str;
-    if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")
-        str=location.pathname.split("index.html")[0]+"posts/index.html";
-    else
-        str=location.pathname+"/posts";
-    my_post_title.onclick=function()
-    {
-        location.search='?postname='+encodeURI(postdata[0]);
-        location.pathname=str;
-    };
+    let my_a=add_child(my_post,"a","","");
+    my_a.setAttribute("href","posts/"+(is_local()?"index.html":"")+"?postname="+encodeURI(postdata[0]));
+    add_child(my_a,"h1","post-title",postdata[0]);
+    // let str;
+    // if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")
+    //     str=location.pathname.split("index.html")[0]+"posts/index.html";
+    // else
+    //     str=location.pathname+"/posts";
+    // my_post_title.onclick=function()
+    // {
+    //     location.search='?postname='+encodeURI(postdata[0]);
+    //     location.pathname=str;
+    // };
     add_child(my_post,"div","post-ab","摘要："+postdata[1]);
     add_child(my_post,"div","post-date",postdata[2]);
     // let my_post_title=document.createElement("h1");
