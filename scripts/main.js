@@ -37,6 +37,18 @@ function adjust_height(tmp)//动态调整iframe的高度
     tmp.height=5000;
 }
 
+function to_url_code(str)//因为encode由于奇怪的原因不能转化'#'，所以重新写了一个
+{
+  str=encodeURI(str);
+  let res="";
+  for(let i=0;i<str.length;i++)
+    if(str[i]=='#')
+      res+="%23";
+    else
+      res+=str[i];
+  return res;
+}
+
 (function write_navigation()
 {
   //let my_navigation=document.createElement("div");
