@@ -143,7 +143,7 @@ window.onresize=function()
   // if(++onresize_cnt>1)
   // {
   let tmp=document.querySelectorAll(".post-box");
-  for(let f in tmp)
-    adjust_height(f);
+  for(let i=0;i<tmp.length;i++)
+    adjust_height(tmp[i]);
   // }
 }
