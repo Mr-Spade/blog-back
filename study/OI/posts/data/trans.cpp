@@ -7,7 +7,7 @@ string so;
 signed main()
 {
 	register int i;
-	scanf("%s",s);
+	gets(s);
 	sprintf(ss,"%s.md",s);
 	freopen(ss,"r",stdin);
 	freopen("test.md","w",stdout);
@@ -26,5 +26,9 @@ signed main()
 	}
 	for(i=0;i<(int)so.size();i++)
 		printf("%c",so[i]);
+	fclose(stdin);
+	fclose(stdout);
+	sprintf(ss,"move test.md %s.md",s);
+	system(ss);
 	return 0;
 }
