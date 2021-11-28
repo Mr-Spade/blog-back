@@ -41,6 +41,26 @@ iframe
 }
 /*去掉iframe的边框*/
 
+a:link
+{
+  text-decoration:none;
+  
+  color:black;
+}
+a:visited
+{
+  text-decoration:none;
+  
+  color:black;
+}
+a:hover
+{
+  text-decoration:none;
+  
+  color:black;
+}
+/*去掉超链接的下划线和颜色*/
+
 .f-bu
 {
   cursor: pointer;

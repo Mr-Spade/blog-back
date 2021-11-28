@@ -15,6 +15,20 @@ function add_child(father,tname,tclass,ttext)
   return res;
 }
 
+function is_local()//是否本地测试
+{
+  return location.pathname.length>=3&&location.pathname.substr(1,2)==="F:";
+}
+
+function get_repath()//找到当前路径相对于主站的位置
+{
+  let str="";
+  let cnt=location.pathname.split('/').length-(is_local()?4:2);
+  for(let i=0;i<cnt;i++)
+    str+="../";
+  return str;
+}
+
 (function write_navigation()
 {
   //let my_navigation=document.createElement("div");
@@ -22,29 +36,32 @@ function add_child(father,tname,tclass,ttext)
   let my_navigation=add_child(document.querySelector("body"),"div","navigation","");
   //let my_title_img=document.createElement("img");
   //my_title_img.className="title-img f-bu";
-  let my_title_img=add_child(my_navigation,"img","title-img f-bu","");
-  if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")
-  {
-    let str="";
-    let cnt=location.pathname.split('/').length-4;
-    for(let i=0;i<cnt;i++)
-    {
-      str+="../";
-    }
-    str+="images/title.png";
-    my_title_img.src=str;
-  }
-  else
-  {
-    let str="";
-    let cnt=location.pathname.split('/').length-2;
-    for(let i=0;i<cnt;i++)
-    {
-      str+="../";
-    }
-    str+="images/title.png";
-    my_title_img.src=str;
-  }
+  let my_a=add_child(my_navigation,"a","","");
+  my_a.setAttribute("href",get_repath()+(is_local()?"index.html":""));
+  let my_title_img=add_child(my_a,"img","title-img","");
+  my_title_img.src=get_repath()+"images/title.png";
+  // if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")
+  // {
+  //   let str="";
+  //   let cnt=location.pathname.split('/').length-4;
+  //   for(let i=0;i<cnt;i++)
+  //   {
+  //     str+="../";
+  //   }
+  //   my_a.setAttribute("href",str+"index.html");
+  //   my_title_img.src=str+"images/title.png";
+  // }
+  // else
+  // {
+  //   let str="";
+  //   let cnt=location.pathname.split('/').length-2;
+  //   for(let i=0;i<cnt;i++)
+  //   {
+  //     str+="../";
+  //   }
+  //   my_a.setAttribute("herf",str);
+  //   my_title_img.src=str+"images/title.png";
+  // }
   // let my_signature=document.createElement("div");
   // my_signature.className="signature";
   // my_signature.textContent=sig[Math.floor(Math.random()*sig.length)];
@@ -62,7 +79,9 @@ function add_child(father,tname,tclass,ttext)
   add_child(my_first_li,"span","toggle f-bu","学习");
   // my_li.appendChild(my_span);
   let my_second_list=add_child(my_first_li,"ul","second-list","");
-  add_child(my_second_list,"li","b-OI f-bu","OI");
+  let my_second_li=add_child(my_second_list,"li","","");
+  my_a=add_child(my_second_li,"a","","OI");
+  my_a.setAttribute("href",get_repath()+"study/OI/"+(is_local()?"index.html":""));
   add_child(my_second_list,"li","","数学");
   my_first_li=add_child(my_first_list,"li","","");
   add_child(my_first_li,"span","toggle f-bu","生活");
@@ -84,26 +103,30 @@ $(document).ready(function(){$(".toggle").click(function(){$(this).next().slideT
 
 add_child(document.querySelector("body"),"div","main-box","");
 
-document.querySelector(".title-img").onclick=function()
-{
-  if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")//本地测试
-  {
-    location.pathname="/F:/Mr-Spade.github.io/index.html";
-  }
-  else//网页
-  {
-    location.pathname="/";
-  }
-};
+// document.querySelector(".title-img").onclick=function()
+// {
+//   if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")//本地测试
+//   {
+//     location.search='';
+//     location.pathname="/F:/Mr-Spade.github.io/index.html";
+//   }
+//   else//网页
+//   {
+//     location.search='';
+//     location.pathname="/";
+//   }
+// };
 
-document.querySelector(".b-OI").onclick=function()
-{
-  if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")//本地测试
-  {
-    location.pathname="/F:/Mr-Spade.github.io/study/OI/index.html";
-  }
-  else//网页
-  {
-    location.pathname="/study/OI";
-  }
-};
+// document.querySelector(".b-OI").onclick=function()
+// {
+//   if(location.pathname.length>=2&&location.pathname.substr(1,2)==="F:")//本地测试
+//   {
+//     location.search='';
+//     location.pathname="/F:/Mr-Spade.github.io/study/OI/index.html";
+//   }
+//   else//网页
+//   {
+//     location.search='';
+//     location.pathname="/study/OI";
+//   }
+// };
