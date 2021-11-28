@@ -18,7 +18,10 @@ function get_value(tar_id)//从location.search中提取tar_id的值
     add_child(my_post,"h1","post-title",oi_postdata[get_value("postid")][0]);
     let my_post_box=add_child(my_post,"iframe","post-box","");
     my_post_box.src="data/"+oi_postdata[get_value("postid")][0]+".html";
-    my_post_box.onload=adjust_height(my_post_box);
+    my_post_box.onload=function()
+    {
+        adjust_height(this);
+    }
     // my_post_box.onresize=function()
     // {
     //     if(this.contentDocument!==null)
