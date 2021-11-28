@@ -71,8 +71,8 @@ a:hover
   width: 20%;
   height: 100%;
 
-  opacity: 60%;
-  background-color: white;
+  background: rgba(255,255,255,0.6);
+  /*background-color: white;*/
 }
 /*左侧导航栏*/
 
@@ -129,8 +129,8 @@ a:hover
   width: 80%;
   /*min-height: 10rem;*/
 
-  opacity: 60%;
-  background-color: white;
+  background: rgba(255,255,255,0.6);
+  /*background-color: white;*/
   border-radius: 2rem;
 }
 /*推送陈列框*/
@@ -148,8 +148,8 @@ a:hover
   width: 95%;
   /*min-height: 10rem;*/
 
-  opacity: 60%;
-  background-color: white;
+  background: rgba(255,255,255,0.6);
+  /*background-color: white;*/
   border-radius: 2rem;
 }
 /*推送框*/

@@ -34,7 +34,7 @@ function adjust_height(tmp)//动态调整iframe的高度
   if(tmp.contentDocument!==null)//有一个鬼畜的问题，本地的contentDocument总是null
     tmp.height=tmp.contentDocument.body.scrollHeight;
   else
-    tmp.height=1000;
+    tmp.height=5000;
 }
 
 (function write_navigation()
@@ -140,7 +140,7 @@ add_child(document.querySelector("body"),"div","main-box","");
 // };
 
 // let onresize_cnt=0;//记录缩放次数特判最开始的加载
-window.onresize=function()
+window.onresize=function()//每次缩放网页都要调整iframe窗口高度
 {
   // if(++onresize_cnt>1)
   // {
