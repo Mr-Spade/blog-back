@@ -5,11 +5,11 @@ let sig=
   "世人苦被明日累，秋天漠漠向昏黑"
 ];
 
-function add_child(father,tname,tclass,ttext)
+function add_child(father,tname,tclass,ttext)//快速为father添加一个子项
 {
   let res=document.createElement(tname);
   res.className=tclass;
-  if(res.textContent!==null)
+  if(res.textContent!==undefined&&res.textContent!==null)
     res.textContent=ttext;
   father.appendChild(res);
   return res;
