@@ -183,7 +183,7 @@ a:hover
 
 .post-box
 {
-  /*display: block;*/
+  display: block;
   border: medium none;
   /*去掉iframe的边框*/
 

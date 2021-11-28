@@ -29,6 +29,23 @@ function get_repath()//找到当前路径相对于主站的位置
   return str;
 }
 
+function adjust_height(tmp)//动态调整iframe的高度
+{
+  if(tmp.contentDocument!==null)//有一个鬼畜的问题，本地的contentDocument总是null
+    tmp.height=tmp.contentDocument.body.scrollHeight+0.01*tmp.width;
+}
+
+// let onresize_cnt=0;//记录缩放次数特判最开始的加载
+// window.onresize=function()
+// {
+//   if(++onresize_cnt>1)
+//   {
+//     let tmp=document.querySelectorAll(".post-box");
+//     for(let f in tmp)
+//       adjust_height(f);
+//   }
+// }
+
 (function write_navigation()
 {
   //let my_navigation=document.createElement("div");
