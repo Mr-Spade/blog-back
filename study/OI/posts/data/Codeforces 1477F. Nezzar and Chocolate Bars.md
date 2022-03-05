@@ -125,7 +125,7 @@ $$
 最后，只需要考虑如何计算$\sum_{i\geq 0}i![x^i](x^ke^{Cx})$即可。考虑：
 
 $$
-\sum_{i\geq 0}i![x^i](x^ke^{Cx})=\sum_{i\geq 0}(i+k)!\frac{C^i}{i!}=k!\sum_{i\geq 0}{{i+k}\choose i}C^i
+\sum_{i\geq 0}i![x^i](x^ke^{Cx})=\sum_{i\geq 0}(i+k)!\frac{C^i}{i!}=k!\sum_{i\geq 0}{i+k\choose i}C^i
 $$
 
 令$F_k=\sum_{i\geq 0}{{i+k}\choose i}C^i$，于是：
