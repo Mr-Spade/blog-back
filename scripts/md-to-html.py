@@ -4,7 +4,7 @@ import sys
 def md_to_html():
     pwd=os.path.split(os.path.abspath(__file__))[0]
     os.chdir(pwd)
-    f=open('log.txt','w')
+    # f=open('log.txt','w')
 
     md_path=r"..\\study\\OI\\posts\\data"
     filelist=os.listdir(md_path)

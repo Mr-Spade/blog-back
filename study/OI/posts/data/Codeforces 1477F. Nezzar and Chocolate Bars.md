@@ -128,10 +128,10 @@ $$
 \sum_{i\geq 0}i![x^i](x^ke^{Cx})=\sum_{i\geq 0}(i+k)!\frac{C^i}{i!}=k!\sum_{i\geq 0}{i+k\choose i}C^i
 $$
 
-令$F_k=\sum_{i\geq 0}{{i+k}\choose i}C^i$，于是：
+令$F_k=\sum_{i\geq 0}{i+k\choose i}C^i$，于是：
 
 $$
-F_k=\sum_{i\geq 0}{{i+k}\choose i}C^i=\sum_{i\geq 0}\Bigg({i+k-1\choose i-1}+{i+k-1\choose i}\Bigg)C^i
+F_k=\sum_{i\geq 0}{i+k\choose i}C^i=\sum_{i\geq 0}\Bigg({i+k-1\choose i-1}+{i+k-1\choose i}\Bigg)C^i
 $$
 
 $$
