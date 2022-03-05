@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>article</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: transparent;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>最近回去啃了啃WC的另一份课件，算是为自己两年前的作品写下续章吧。</p>
+<p>本文是yjz、xyx、csl三人在WC2019营员交流课件的笔记。</p>
+<h3 id="符号和约定">符号和约定</h3>
+<p>为了方便本文的叙述，采用如下可能不严谨的定义： 我们记<span
+class="math inline">w[i:j]</span>表示<span
+class="math inline">w</span>从第<span
+class="math inline">i</span>个字符到第<span
+class="math inline">j</span>个字符组成的子串，当<span
+class="math inline">i=1</span>或<span
+class="math inline">j=|w|</span>时，<span
+class="math inline">i</span>或<span
+class="math inline">j</span>可以省略，<span
+class="math inline">i=j</span>时，可以简记为<span
+class="math inline">w[i]</span>。 对于字符串<span
+class="math inline">u,v</span>，记<span class="math inline">u\lhd
+v</span>，如果<span class="math inline">u&lt;v</span>且<span
+class="math inline">u</span>并非<span
+class="math inline">v</span>的前缀，即两者在结束之前就比较出了大小。
+一个比较显然的结论是，如果<span class="math inline">u\lhd
+v</span>，那么对任意字符串<span
+class="math inline">w_1,w_2</span>，有<span class="math inline">w_1u\lhd
+w_1v</span>且<span class="math inline">uw_1\lhd vw_2</span>。</p>
+<h3 id="定义1">定义1</h3>
+<p>如果字符串<span class="math inline">w</span>满足对于<span
+class="math inline">i=2,3,\dots,|w|</span>，都有<span
+class="math inline">w&lt;w[i:]</span>，那么称<span
+class="math inline">w</span>是一个<strong>Lyndon串</strong>，即<span
+class="math inline">w</span>的任意严格后缀都大于<span
+class="math inline">w</span>本身。</p>
+<h3 id="定理1">定理1</h3>
+<p>如果<span class="math inline">u,v</span>都是Lyndon串，且<span
+class="math inline">u&lt;v</span>，那么<span
+class="math inline">uv</span>是Lyndon串。</p>
+<p>证明：将<span class="math inline">uv</span>的后缀<span
+class="math inline">(uv)[i:]</span>分为三部分：<span
+class="math inline">i\in [2,|u|],i=|u|+1,i\in[|u|+2,|uv|]</span>。
+对于第一部分，考虑<span
+class="math inline">u</span>是一个Lyndon串，对于其严格后缀<span
+class="math inline">u[i:]</span>，有<span class="math inline">u\lhd
+u[i:]</span>，从而有<span class="math inline">uv\lhd (uv)[i:]</span>。
+对于第二部分，若<span class="math inline">u\lhd v</span>，则显然<span
+class="math inline">uv\lhd (uv)[|u|+1:]</span>；否则<span
+class="math inline">u</span>是<span
+class="math inline">v</span>的前缀，有<span
+class="math inline">[uv&lt;v]\Leftrightarrow[v&lt;v[|u|+1:]]</span>，由<span
+class="math inline">v</span>是Lyndon串，立得后者成立。
+对于第三部分，考虑<span
+class="math inline">uv&lt;v&lt;v[i-|u|:]=(uv)[i:],i\in[|u|+2,|uv|]</span>即可。</p>
+<h3 id="定理2">定理2</h3>
+<p>如果<span class="math inline">u</span>是Lyndon串，设<span
+class="math inline">a</span>为一个字符，那么对于字符串<span
+class="math inline">u^ku[:i-1]a,i\in[1,|u|]</span>，有： 1.若<span
+class="math inline">a&lt;u[i]</span>，那么<span
+class="math inline">u</span>是任意以<span
+class="math inline">u^ku[:i-1]a</span>开头的字符串的最长Lyndon前缀。
+2.若<span class="math inline">a&gt;u[i]</span>，那么<span
+class="math inline">u^ku[:i-1]a</span>是Lyndon串。</p>
+<p>证明：对<span class="math inline">a&lt;u[i]</span>的情况，由于<span
+class="math inline">u^nu[:i]</span>若并非<span
+class="math inline">u</span>本身，就是周期串，不可能是Lyndon串。对于剩下的更长的前缀，不妨假设其为<span
+class="math inline">u^ku[:i-1]av</span>，从而有<span
+class="math inline">u[:i-1]av</span>作为后缀，由于<span
+class="math inline">u[:i-1]a\lhd u</span>，因此<span
+class="math inline">u[:i-1]av\lhd u^ku[:i-1]av</span>，从而<span
+class="math inline">u^ku[:i-1]av</span>不可能是Lyndon串。第一部分得证。
+对<span class="math inline">a&gt;u[i]</span>的情况，将<span
+class="math inline">u^ku[:i-1]a</span>的严格后缀分为以<span
+class="math inline">u</span>开头的、以<span
+class="math inline">u</span>的严格后缀<span
+class="math inline">u[i:]</span>开头的和<span
+class="math inline">a</span>。对于以<span
+class="math inline">u</span>开头的，假设其为<span
+class="math inline">u^{k&#39;}u[:i-1]a(k&#39;&lt;k)</span>，由<span
+class="math inline">u\lhd u[:i-1]a</span>，立得<span
+class="math inline">u^{k&#39;+1}\lhd
+u^{k&#39;}u[:i-1]a</span>，从而<span
+class="math inline">u^ku[:i-1]a&lt;u^{k&#39;}u[:i-1]a</span>；对于以<span
+class="math inline">u[i:]</span>开头的，由<span
+class="math inline">u[i:]\lhd u</span>立得其小于<span
+class="math inline">u^ku[:i-1]a</span>；最后，由<span
+class="math inline">u\leq u[i]&lt;a</span>，即得<span
+class="math inline">a</span>也大于整个串。因此，<span
+class="math inline">u^ku[:i-1]a</span>是Lyndon串。</p>
+<h3 id="定义2">定义2</h3>
+<p>对于字符串<span class="math inline">w</span>，若存在一组Lyndon串<span
+class="math inline">u_1,u_2,\dots,u_n</span>，满足<span
+class="math inline">w=u_1u_2\dots u_n</span>且<span
+class="math inline">u_1\geq u_2\geq \dots \geq u_n</span>，那么称<span
+class="math inline">u_1,u_2,\dots,u_n</span>为<span
+class="math inline">w</span>的<strong>Lyndon分解</strong>。</p>
+<h3 id="定理3">定理3</h3>
+<p>任意字符串<span class="math inline">w</span>的Lyndon分解存在。</p>
+<p>证明：采用构造法并对<span
+class="math inline">w</span>的后缀归纳证明。设<span
+class="math inline">u&#39;_1,u&#39;_2,\dots,u&#39;_m</span>是<span
+class="math inline">w[2:]</span>的一组Lyndon分解，由于<span
+class="math inline">w[1]</span>是Lyndon串，有<span
+class="math inline">w=w[1]u&#39;_1u&#39;_2\dots
+u&#39;_m</span>，对于这组“初步的”Lyndon分解，由定理1，只要开头的两个Lyndon串是小于关系，就合并为一个新Lyndon串，反复操作直到只剩下一个串或者是不小于的关系，就得到了<span
+class="math inline">w</span>的一组Lyndon分解。</p>
+<h3 id="定理4">定理4</h3>
+<p>任意字符串<span class="math inline">w</span>的Lyndon分解唯一。</p>
+<p>证明：只要证明<span
+class="math inline">w</span>的任意Lyndon分解的第一个字符串<span
+class="math inline">w[:i]</span>一定是<span
+class="math inline">w</span>的最长Lyndon前缀，之后考虑余下的串是<span
+class="math inline">w[i+1:]</span>的Lyndon分解，归纳证明即可。
+反证法，假设存在更长的Lyndon前缀<span
+class="math inline">w[:j](i&lt;j)</span>，则该Lyndon分解<span
+class="math inline">w[:i]u_2u_3\dots u_n</span>中，存在一个<span
+class="math inline">u_k</span>满足其是第一个右端点位置<span
+class="math inline">\geq j</span>的串，不妨记为<span
+class="math inline">w[i&#39;:j&#39;]</span>，考虑<span
+class="math inline">w[:j]</span>是Lyndon串，因此<span
+class="math inline">w[:i]&lt;w[:j]&lt;w[i&#39;:j]\leq
+w[i&#39;:j&#39;]=u_k</span>，得到<span
+class="math inline">w[:i]&lt;u_k</span>，与Lyndon分解是不递增的矛盾。综上所述Lyndon分解唯一。</p>
+<h3 id="初步的lyndon分解算法">初步的Lyndon分解算法</h3>
+<p>在定理4保证了Lyndon分解的唯一性后，定理3实际上给出了一个求Lyndon分解的算法。通过哈希或后缀数组预处理后判断子串的大小关系，并沿用定理3证明中的过程，就可以做到<span
+class="math inline">O(n\log n)</span>求解Lyndon分解。当然，采用<span
+class="math inline">\text{SA-IS}</span>和<span
+class="math inline">O(n)-O(1)\text{RMQ}</span>可以使算法做到<span
+class="math inline">O(n)</span>，然而这样的实现并不实用。</p>
+<h3 id="高效的lyndon分解算法">高效的Lyndon分解算法</h3>
+<p>通过定理2给我们的启发，有可能找到更好的Lyndon分解算法。考虑将<span
+class="math inline">w</span>划分为三部分，记录<span
+class="math inline">i,k,p</span>表示<span
+class="math inline">w[:i]</span>已经进行了Lyndon分解，并确定必定是<span
+class="math inline">w</span>的Lyndon分解的前若干项，而<span
+class="math inline">w[i+1:k]</span>则是一个形如<span
+class="math inline">u^ku[:j-1]</span>的串，其中<span
+class="math inline">u</span>是Lyndon串且长度为<span
+class="math inline">p</span>，<span
+class="math inline">w[k+1:]</span>则是未知情况的串。
+考虑不断进行如下迭代，直到<span class="math inline">i</span>变为<span
+class="math inline">|w|</span>： 考察<span
+class="math inline">w[k+1]</span>（若<span
+class="math inline">k+1&gt;|w|</span>，则定义<span
+class="math inline">w[k+1]</span>是小于任何字符集中字符的特殊字符<span
+class="math inline">\$</span>），分三类情况： 1.<span
+class="math inline">w[k+1]=w[k+1-p]</span>，则<span
+class="math inline">u^ku[:j-1]</span>的形式继续保持，令<span
+class="math inline">k</span>自增<span class="math inline">1</span>即可。
+2.<span class="math inline">w[k+1]&gt;w[k+1-p]</span>，则由定理<span
+class="math inline">2</span>可知，<span
+class="math inline">w[i+1,k+1]</span>是一个Lyndon串，但是不能保证其一定出现在最终的Lyndon分解中。不过，这仍满足<span
+class="math inline">u^ku[:j-1]</span>的形式（<span
+class="math inline">k=j=1</span>），于是令<span
+class="math inline">k</span>自增<span
+class="math inline">1</span>，而<span
+class="math inline">p</span>为<span
+class="math inline">k-i+1</span>即可。 3.<span
+class="math inline">w[k+1]&lt;w[k+1-p]</span>，则由定理<span
+class="math inline">2</span>可知，<span
+class="math inline">u</span>必定是<span
+class="math inline">w[i+1:]</span>的最长Lyndon前缀。由定理4可知，其一定出现在Lyndon分解中，于是我们将<span
+class="math inline">k</span>个<span
+class="math inline">u</span>全部加入已知的Lyndon分解中。对于剩下的<span
+class="math inline">u[:j-1]</span>，无法保证其满足<span
+class="math inline">u&#39;^ku&#39;[:j-1]</span>的形式，干脆重新开始，令<span
+class="math inline">k</span>指向<span
+class="math inline">u[:j-1]</span>的第一个字符（单字符必定是Lyndon串），并令<span
+class="math inline">i=k-1,p=1</span>。</p>
+<p>综上即得Lyndon分解，每次迭代是<span
+class="math inline">O(1)</span>的，且<span
+class="math inline">i+k</span>至少增加<span
+class="math inline">1</span>。由于<span class="math inline">i,k\leq
+|w|</span>，因此整个算法是<span
+class="math inline">O(n)</span>的，并且有非常简洁的实现。</p>
+<p>The Runs Theorem 部分待填坑。</p>
+</body>
+</html>

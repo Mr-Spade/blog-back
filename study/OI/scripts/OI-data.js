@@ -38,7 +38,7 @@ let oi_postdata=
     ["旧题重做","本文是对曾经AC的一些好题的重新思考，主要涉及生成函数、容斥、自动机等知识点，含金量较高。","2020-12-12"],
     ["Codeforces Round #700 (Div.1)","本文是对一场CF比赛的解析，象征着CF用户Mr_Spade终于取得了高中时错过的荣耀，登上了一个应属于自己的舞台，用到的好方法有整体二分、势函数、分段打表等。","2021-02-08"],
     ["Codeforces 1477F. Nezzar and Chocolate Bars","本文是对一道CF题的解析，主要运用了概率密度函数、生成函数。","2021-02-20"],
-    ["Lyndon Word & The Runs Theorem","本文主要讲解了Lyndon Word的概念、性质，以及lyndon分解的计算方法，讲解思路较为清晰。但是本文尚未完成The Runs Theorem的部分。","2021-02-21"],
+    ["Lyndon Word and The Runs Theorem","本文主要讲解了Lyndon Word的概念、性质，以及lyndon分解的计算方法，讲解思路较为清晰。但是本文尚未完成The Runs Theorem的部分。","2021-02-21"],
     ["Codeforces Round #576 (Div.1)","本文是对一场CF比赛的解析，用到的好方法有数的性质、随机化等。","2021-05-15"],
 ];
 

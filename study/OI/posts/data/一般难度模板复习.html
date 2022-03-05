@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>article</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: transparent;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="stoer-wagner算法">Stoer-Wagner算法</h2>
+<p>求无向图全局最小割的一种算法。设一张图<span
+class="math inline">(V,E)</span>的点集为<span
+class="math inline">V</span>，边集为<span
+class="math inline">E</span>。我们说集合<span
+class="math inline">C</span>是图<span
+class="math inline">(V,E)</span>的割，当且仅当<span
+class="math inline">C\in E</span>且存在<span
+class="math inline">V</span>的一个划分<span
+class="math inline">S</span>和<span
+class="math inline">T</span>，使得<span class="math inline">(u,v)\in
+C\iff u\in S\land v\in T</span>，一个割的权值<span
+class="math inline">w_C</span>就是割中边权的和。</p>
+<p>考虑一个事实：对于任意两点<span class="math inline">s,t\in
+V</span>，在一个割中<span
+class="math inline">s,t</span>或在同一划分内，或在不同划分内。那么可以先考虑计算<span
+class="math inline">s-t</span>割，再将<span
+class="math inline">s,t</span>两点合并（<span
+class="math inline">s,t</span>之间的边消去，连向其它点的边合并）并递归计算即可。</p>
+<p>而Stoer-Wagner算法将告诉我们，总存在一对点<span
+class="math inline">s,t</span>使得<span
+class="math inline">s-t</span>最小割就是将<span
+class="math inline">t</span>的所有边割除的情况。</p>
+<p>考虑这样找到满足要求的<span
+class="math inline">s,t</span>：设一个点集<span
+class="math inline">V&#39;\in V</span>，初始情况下<span
+class="math inline">V&#39;</span>为空。对于不在<span
+class="math inline">V&#39;</span>中的点<span
+class="math inline">u</span>，定义其权值为<span
+class="math inline">w_{V&#39;,u}=\sum_{v\in
+V&#39;}w_{(u,v)}</span>。如果每次选择<span
+class="math inline">w_u</span>最大的<span
+class="math inline">u</span>加入<span
+class="math inline">V&#39;</span>（相同则随意），那么最后两个加入的点就是<span
+class="math inline">s</span>和<span class="math inline">t</span>（<span
+class="math inline">t</span>为最后一个点）。</p>
+<p>证明：只要证对于任意一种<span class="math inline">s-t</span>割<span
+class="math inline">C</span>，都有<span class="math inline">w_C\geq
+w_{{V\setminus \{t\}},t}</span>即可。令<span
+class="math inline">id_{a_k}=k</span>，<span
+class="math inline">C_k=\{(u,v)\in C|id_u\leq k, id_v\leq
+k\}</span>，<span
+class="math inline">V_k=\{a_1,a_2,\dots,a_k\}</span>。将所有点按照加入<span
+class="math inline">V&#39;</span>的顺序排成一个列<span
+class="math inline">\{a_n\}</span>，对于任意一种<span
+class="math inline">s-t</span>割<span
+class="math inline">C</span>，设其对应的分划为<span
+class="math inline">S,T</span>，我们称满足<span
+class="math inline">n&gt;1\land [a_{n-1}\in S]\neq[a_n\in
+S]</span>，即与前一个点不在一个分划内的点为活跃点，显然<span
+class="math inline">t</span>为活跃点。对于任意一个活跃点<span
+class="math inline">v</span>，我们证明<span
+class="math inline">w_{C_{id_v}}\geq w_{V_{id_v},v}</span>即可。</p>
+<p>采用归纳法，对于第一个活跃点<span
+class="math inline">v</span>，不难发现<span
+class="math inline">w_{C_{id_v}}=w_{V_{id_v},v}</span>，对于之后任意活跃点<span
+class="math inline">v</span>，设其前一个活跃点为<span
+class="math inline">u</span>，将<span
+class="math inline">C_{id_v}</span>中的边分为三部分：<span
+class="math inline">C_{id_u}</span>，<span
+class="math inline">u,v</span>之间的点与<span
+class="math inline">v</span>的连边(设这个集合为<span
+class="math inline">A</span>)，其他边。那么有：</p>
+<p><span class="math display">w_{V_{id_v},v}=w_{V_{id_u},v}+w_A\leq
+w_{V_{id_u},u}+w_A\leq w_{C_{id_u}}+w_A\leq w_{C_{id_v}}</span></p>
+<p>于是结论成立。</p>
+<h2 id="扩展中国剩余定理">扩展中国剩余定理</h2>
+<p>显然只需要考虑合并两个同余方程的情况：</p>
+<p><span class="math display">x\equiv a_1(\bmod \ b_1)</span> <span
+class="math display">x\equiv a_2(\bmod\ b_2)</span></p>
+<p>第一个方程的通解为<span class="math inline">x=a_1+k*b_1,k\in
+\mathbb{Z}</span>，代入第二个方程即有<span
+class="math inline">a_1+k*b_1\equiv a_2(\bmod \ b_2)</span>，改写为<span
+class="math inline">k_1*b_1+k_2*b_2=a_2-a_1</span>，利用扩展欧几里得求解即可。</p>
+</body>
+</html>
