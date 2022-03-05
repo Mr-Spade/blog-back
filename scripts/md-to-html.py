@@ -11,6 +11,6 @@ def md_to_html():
     for i in range(0,len(filelist)):
         if(filelist[i][-3:len(filelist[i])]!=".md"):
             continue
-        str=md_path+r"\\"+filelist[i].split('.md')[0].replace(" ","\" \"")
+        str=md_path+r"\\"+filelist[i].split('.md')[0].replace(" ","\" \"")# cmd文件名的空格两边需要打双引号
         os.popen(r"..\\tools\\pandoc\\pandoc -s "+str+r".md ..\\tools\\pandoc\\metadata.yaml -o "+str+".html --katex")
 md_to_html()
