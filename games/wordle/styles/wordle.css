@@ -1,0 +1,71 @@
+
+.game-box
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;/*使用百分数调取的是元素宽度……*/
+  margin-bottom: 5vh;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  width: 95%;
+  height: calc(90vh - 3rem);/*与页面高度差不多*/
+
+  background: rgba(255,255,255,0.6);
+  /*background-color: white;*/
+  border-radius: 2rem;
+}
+/*女生节游戏陈列框*/
+
+.game-title
+{
+  font-size: 3vw;
+
+  margin: 0%;
+  padding: 0%;
+  padding-bottom: 0.5rem;
+
+  text-align: center;
+}
+/*女生节游戏标题*/
+
+.game-context
+{
+  font-size: 1.5vw;
+
+  margin: 0%;
+  padding: 0%;
+
+  white-space: pre-wrap;/*保留文字中的空格，且能正常换行*/
+}
+/*女生节游戏文字内容*/
+
+li.game-li
+{
+  font-size: 1vw;
+
+  padding-top: 0%;
+  padding-bottom: 0%;
+  margin-left: 2%;
+  margin-right: 2%;
+  /*列表项左右有适当间距*/
+}
+
+input.game-input
+{
+  font: 3vw sans-serif;
+  text-align: center;
+
+  margin: 2% auto;
+  display: table;
+
+  width: 15vw;
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+  border-radius: 1rem;
+
+  background-color: rgba(255,255,255,0.6);
+}
+/*女生节游戏输入框*/
