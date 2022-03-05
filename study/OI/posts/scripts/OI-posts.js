@@ -1,17 +1,3 @@
-function get_value(tar_id)//从location.search中提取tar_id的值
-{
-    let tmp=location.search.split('?');
-    let tot=tmp[tmp.length-1].split('&');
-    for(let i=0;i<tot.length;i++)
-    {
-        let id=tot[i].split('=')[0];
-        let val=tot[i].split('=')[1];
-        if(id===tar_id)
-            return val;
-    }
-    return -1;
-}
-
 (function write_post()//写推送
 {
     let my_post=add_child(document.querySelector(".main-box"),"div","post","");

@@ -2,7 +2,9 @@ let sig=
 [
   "从一缕微光开始",
   "我心中那团青色的怒火，终将燃烧这片大地",
-  "世人苦被明日累，秋天漠漠向昏黑"
+  "世人苦被明日累，秋天漠漠向昏黑",
+  "您可能是个人英雄主义的受害者",
+  "三小时工作，八小时休息，剩下的十三小时留给自己"
 ];
 
 function add_child(father,tname,tclass,ttext)//快速为father添加一个子项
@@ -31,7 +33,7 @@ function get_repath()//找到当前路径相对于主站的位置
 
 function adjust_height(tmp)//动态调整iframe的高度
 {
-  if(tmp.contentDocument!==null)//有一个鬼畜的问题，本地的contentDocument总是null
+  if(tmp.contentDocument!==null)//有一个鬼畜的问题，本地的contentDocument总是null，所以本地干脆大力把高度调成5000
     tmp.height=tmp.contentDocument.body.scrollHeight;
   else
     tmp.height=5000;
@@ -110,7 +112,9 @@ function to_url_code(str)//因为encode由于奇怪的原因不能转化'#'，�
   add_child(my_second_list,"li","","板绘");
   add_child(my_second_list,"li","","食堂测评");
   add_child(my_second_list,"li","","美图收藏");
-  my_first_li=add_child(my_first_list,"li","","荣誉陈列架");
+  my_first_li=add_child(my_first_list,"li","","");
+  my_a=add_child(my_first_li,"a","","荣誉陈列架");
+  my_a.setAttribute("href",get_repath()+"gallery/"+(is_local()?"index.html":""));
   my_first_li=add_child(my_first_list,"li","","客观履历");
   my_first_li=add_child(my_first_list,"li","","友情链接");
 }
@@ -160,4 +164,18 @@ window.onresize=function()//每次缩放网页都要调整iframe窗口高度
   for(let i=0;i<tmp.length;i++)
     adjust_height(tmp[i]);
   // }
+}
+
+function get_value(tar_id)//从location.search中提取tar_id的值
+{
+    let tmp=location.search.split('?');
+    let tot=tmp[tmp.length-1].split('&');
+    for(let i=0;i<tot.length;i++)
+    {
+        let id=tot[i].split('=')[0];
+        let val=tot[i].split('=')[1];
+        if(id===tar_id)
+            return val;
+    }
+    return -1;
 }
