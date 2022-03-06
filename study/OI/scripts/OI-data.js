@@ -1,4 +1,4 @@
-let oi_postdata=
+let postdata=
 [
     ["四边形不等式","本文介绍了四边形不等式及其应用，证明部分尚未完成。","2018-09-12"],
     ["一般图最大匹配——带花树","本文介绍了带花树的原理，并证明了带花树的复杂度，但是因为神秘的原因没有给出代码。","2018-09-12"],
@@ -41,12 +41,3 @@ let oi_postdata=
     ["Lyndon Word and The Runs Theorem","本文主要讲解了Lyndon Word的概念、性质，以及lyndon分解的计算方法，讲解思路较为清晰。但是本文尚未完成The Runs Theorem的部分。","2021-02-21"],
     ["Codeforces Round #576 (Div.1)","本文是对一场CF比赛的解析，用到的好方法有数的性质、随机化等。","2021-05-15"],
 ];
-
-oi_postdata.sort(function(a,b)
-{
-    if(parseInt(a[2].substr(0,4))!==parseInt(b[2].substr(0,4)))
-        return parseInt(a[2].substr(0,4))-parseInt(b[2].substr(0,4));
-    if(parseInt(a[2].substr(5,2))!==parseInt(b[2].substr(5,2)))
-        return parseInt(a[2].substr(5,2))-parseInt(b[2].substr(5,2));
-    return parseInt(a[2].substr(8,2))-parseInt(b[2].substr(8,2));
-});//使博文按照最后修改日期排序（后续修改博文，只要改对应日期即可刷新顺序）（排序似乎是稳定的）
