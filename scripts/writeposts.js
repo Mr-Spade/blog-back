@@ -1,3 +1,13 @@
+//调用该脚本之前，务请记得加载postdata！
+postdata.sort(function(a,b)
+{
+    if(parseInt(a[2].substr(0,4))!==parseInt(b[2].substr(0,4)))
+        return parseInt(a[2].substr(0,4))-parseInt(b[2].substr(0,4));
+    if(parseInt(a[2].substr(5,2))!==parseInt(b[2].substr(5,2)))
+        return parseInt(a[2].substr(5,2))-parseInt(b[2].substr(5,2));
+    return parseInt(a[2].substr(8,2))-parseInt(b[2].substr(8,2));
+});//使博文按照最后修改日期排序（后续修改博文，只要改对应日期即可刷新顺序）（排序似乎是稳定的）
+
 (function write_post()//写推送
 {
     let my_post=add_child(document.querySelector(".main-box"),"div","post","");
