@@ -108,7 +108,9 @@ function to_url_code(str)//因为encode由于奇怪的原因不能转化'#'，�
   my_first_li=add_child(my_first_list,"li","","");
   add_child(my_first_li,"span","toggle f-bu","生活");
   my_second_list=add_child(my_first_li,"ul","second-list","");
-  add_child(my_second_list,"li","","杂记");
+  my_second_li=add_child(my_second_list,"li","","");
+  my_a=add_child(my_second_li,"a","","杂记");
+  my_a.setAttribute("href",get_repath()+"life/notes/"+(is_local()?"index.html":""));
   add_child(my_second_list,"li","","板绘");
   add_child(my_second_list,"li","","食堂测评");
   add_child(my_second_list,"li","","美图收藏");
