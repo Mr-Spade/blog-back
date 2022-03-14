@@ -5,7 +5,7 @@ import sys
 pwd=os.path.split(os.path.abspath(__file__))[0]#把工作区设置为py脚本所在位置（为什么不呢？）
 os.chdir(pwd)
 
-md_path_list=[r"..\\study\\OI\\posts\\data",r"..\\life\\notes\\posts\\data"]
+md_path_list=[r"..\\study\\OI\\posts\\data",r"..\\life\\notes\\posts\\data",r"..\\life\\records\\posts\\data",r"..\\study\\math\\posts\\data"]
 
 def md_to_html():
     # f=open('log.txt','w')

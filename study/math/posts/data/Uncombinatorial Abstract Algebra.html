@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>article</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: transparent;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h3 id="semigroup">semigroup</h3>
+<p><span class="math display">
+\mathscr{SG}:=\{G=\langle\hat G,\cdot\rangle|\cdot \in {\hat G}^{\hat
+G\times \hat G}\land(\forall a,b,c\in \hat G)((a\cdot b)\cdot
+c)=(a\cdot(b\cdot c))\}
+</span></p>
+<p><span class="math inline">a\cdot b\leadsto ab</span></p>
+<p><span class="math inline">g\in\hat G\leadsto g\in G</span></p>
+<h3 id="monoid">monoid</h3>
+<p><span class="math display">
+\mathscr{MN}:=\{G\in \mathscr{SG}|(\exists e\in G)(\forall g\in
+G)(eg=ge=g)\}
+</span></p>
+<p><span class="math inline">\vdash w.d.(\mathfrak{E}:G\mapsto
+e)</span></p>
+<p><span class="math inline">\blacktriangleleft (\exists e,e&#39;\in
+G)(\forall g\in G)(eg=ge=g\land e&#39;g=ge&#39;=g)\Rightarrow
+e=ee&#39;=e&#39;\blacktriangleright</span></p>
+<p><span class="math inline">\mathfrak{E}(G)\leadsto e</span></p>
+<h2 id="group">group</h2>
+<p><span class="math display">
+\mathscr{G}:=\{G\in \mathscr{MN}|(\forall g\in G)(\exists g&#39;\in
+G)(g&#39;g=gg&#39;=e)\}
+</span></p>
+<p><span class="math inline">\vdash w.d.(\mathfrak{INV}:g\mapsto
+g&#39;)</span></p>
+<p><span class="math inline">\blacktriangleleft (\exists g_1,g_2\in
+G)(g_1g=gg_1=e\land g_2g=gg_2=e)\Rightarrow
+g_1=g_1(gg_2)=(g_1g)g_2=g_2\blacktriangleright</span></p>
+<p><span class="math inline">\mathfrak{INV}(g)\leadsto g^{-1}</span></p>
+<p><span class="math inline">\vdash (g^{-1})^{-1}=g</span></p>
+<p><span class="math inline">\vdash (ab)^{-1}=b^{-1}a^{-1}</span></p>
+<p><span class="math inline">\vdash w.d.(a^k|k\in \mathbb{Z})</span></p>
+<p><span class="math inline">\vdash G\in \mathscr{SG}\land (\exists e\in
+G)(\forall g\in G)(eg=g)\land (\forall g\in G)(\exists g&#39;\in
+G)(g&#39;g=e)\rightarrow G\in \mathscr{G}</span></p>
+<p><span class="math inline">\blacktriangleleft
+gg&#39;=egg&#39;=(g&#39;&#39;g&#39;)gg&#39;=g&#39;&#39;(g&#39;g)g&#39;=g&#39;&#39;eg&#39;=g&#39;&#39;g=e,ge=g(g&#39;g)=(gg&#39;)g=eg=g\blacktriangleright</span></p>
+<h3 id="subgroup">subgroup</h3>
+<p><span class="math inline">G\in\mathscr{G}\land H\in
+\mathscr{G}\land\hat H\subseteq \hat G\leadsto H\leq G</span></p>
+<p><span class="math inline">\vdash G\in \mathscr{G}\land \hat
+H\subseteq \hat G\land (\forall a,b\in \hat H)(ab\in \hat H\land
+a^{-1}\in \hat H)\rightarrow H\in \mathscr{G}</span></p>
+<p><span class="math inline">\vdash G\in \mathscr{G}\land \hat
+H\subseteq \hat G\land (\forall a,b\in \hat H)(ab^{-1}\in \hat
+H)\rightarrow H\in \mathscr{G}</span></p>
+<p><span class="math inline">\vdash G\in \mathscr{G}\land \hat
+H\subseteq \hat G\land|\hat H|&lt;\infty\land (\forall a,b\in \hat
+H)(ab\in \hat H)\rightarrow H\in \mathscr{G}</span></p>
+<h4 id="center">center</h4>
+<p><span class="math inline">C:G\mapsto \{c\in G|(\forall g\in
+G)(cg=gc)\}</span></p>
+<p><span class="math inline">\vdash C(G)\leq G</span></p>
+<p>..</p>
+<p><span class="math inline">\vdash \emptyset\subsetneq
+\mathbf{H}\subseteq \{H|H\leq G\}\rightarrow \bigcap\mathbf{H}\leq
+G</span></p>
+<p><span class="math inline">\vdash w.d.(\langle S\rangle:=H|H\leq
+G\land S\subseteq \hat H\land (\forall H&#39;\leq G)(S\subseteq \hat
+{H&#39;}\rightarrow H\leq H&#39;))</span></p>
+<p><span class="math inline">\vdash \widehat {\langle
+S\rangle}=\{\prod_{i=1}^na_i^{\varepsilon_i}|n\in \mathbb{N}^*\land
+a_i\in S\land \varepsilon_i\in\{\pm 1\}\}</span></p>
+<p><span class="math inline">\langle\{a\}\rangle\leadsto \langle
+a\rangle</span></p>
+<h4 id="period">period</h4>
+<p><span class="math inline">o(a):=\inf\{n\in
+\mathbb{N}^*|a^n=e\}</span></p>
+<p>..</p>
+<h3 id="coset">coset</h3>
+<p><span class="math inline">\{ah|h\in H\}\leadsto aH</span></p>
+<p><span class="math inline">\vdash H\leq G\land g\in G\rightarrow(g\in
+H\leftrightarrow gH=H)</span></p>
+<p><span class="math inline">\vdash |aH|=|H|</span></p>
+<p><span class="math inline">\vdash aH\neq bH\rightarrow aH\cap
+bH=\emptyset</span></p>
+<p><span class="math inline">\blacktriangleleft aH\neq bH\land
+ah_1=bh_2\in aH\cap bH\\\Rightarrow b^{-1}aH\neq H\land
+b^{-1}a=h_2h_1^{-1}\in H\\\Rightarrow b^{-1}a\not \in H\land b^{-1}a\in
+H\Rightarrow !\blacktriangleright</span></p>
+<p><span class="math inline">G/_LH:=\{aH|a\in G\}</span></p>
+<p><span class="math inline">[G:H]:=|G/_LH|</span></p>
+<h4 id="lagrange-theorem">Lagrange theorem</h4>
+<p><span class="math display">
+\fbox{$\vdash H\leq G\rightarrow |G|=|H|[G:H]$}
+</span></p>
+</body>
+</html>

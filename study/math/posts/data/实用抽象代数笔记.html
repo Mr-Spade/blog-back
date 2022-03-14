@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>article</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: transparent;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><del>丢点最近写的内容刷刷存在感。</del>
+本来想写非实用抽象代数笔记的，写了一点发现再写的话期中考前抽代就复习不完了，于是就腰斩了那篇笔记。
+说不定以后还会接着写，谁知道呢？咕咕咕。</p>
+<h4 id="证明2k阶群k是奇数必有k阶正规子群">证明<span
+class="math inline">2k</span>阶群（<span
+class="math inline">k</span>是奇数）必有<span
+class="math inline">k</span>阶正规子群。</h4>
+<p>考虑这样构造一个同态：用任意方式有序化<span
+class="math inline">2k</span>阶群<span
+class="math inline">G</span>的元素，将<span
+class="math inline">G</span>每个元素<span
+class="math inline">g</span>的左作用看作对<span
+class="math inline">G</span>中元素的置换<span
+class="math inline">\sigma_g</span>，则同态<span
+class="math inline">\phi:g\mapsto (-1)^{{\rm
+sign}(\sigma_g)}</span>是<span class="math inline">G\to \{\pm
+1\}</span>的一个同态。 由同态基本定理，若该同态映上，则<span
+class="math inline">G/{\rm Ker}\phi\cong \{\pm 1\}</span>，从而<span
+class="math inline">|{\rm
+Ker}\phi|=\frac{|G|}{2}</span>，也就完成了证明。现在证明同态是映上的，则只要证存在<span
+class="math inline">g</span>使得<span
+class="math inline">\phi(g)=-1</span>。
+考虑置换的特殊性质：每个元素<span
+class="math inline">g</span>只会在各个<span
+class="math inline">\sigma_{g&#39;}</span>中恰好在每个位置出现一次。现证明这些排列的总逆序对数是奇数，从而必有奇置换，就完成了证明。对于每一对元素<span
+class="math inline">i,j</span>，由于<span
+class="math inline">i</span>在每个排列中恰于每个位置出现<span
+class="math inline">1</span>次，故不可能永远在<span
+class="math inline">j</span>之前。根据每个元素是否交换<span
+class="math inline">i,j</span>的顺序，又可构造一个到<span
+class="math inline">\{\pm
+1\}</span>的同态，且该同态必是满的。于是恰有<span
+class="math inline">k</span>个元素的左作用交换了<span
+class="math inline">i,j</span>，贡献的逆序对数必为奇数。 而<span
+class="math inline">i,j</span>二元组的总数目<span
+class="math inline">\frac{2k(2k-1)}{2}</span>也是奇数，故总逆序对数为奇数，就完成了证明。</p>
+<h4
+id="设群g有一个指数为n的子群h证明h包含一个g的正规子群n满足gnn">设群<span
+class="math inline">G</span>有一个指数为<span
+class="math inline">n</span>的子群<span
+class="math inline">H</span>，证明<span
+class="math inline">H</span>包含一个<span
+class="math inline">G</span>的正规子群<span
+class="math inline">N</span>满足<span
+class="math inline">[G:N]|n!</span></h4>
+<p>考虑这样构造一个<span class="math inline">G</span>在<span
+class="math inline">G/_LH</span>上的左作用：<span
+class="math inline">g*aH:=gaH</span>，这个作用对应一个<span
+class="math inline">G\to
+S(G/_LH)</span>的同态，考察其同态核，为满足<span
+class="math inline">\forall a\in G</span>，有<span
+class="math inline">a^{-1}ga\in H</span>的元素<span
+class="math inline">g</span>。容易知这样的<span
+class="math inline">g</span>组成一个群<span
+class="math inline">N</span>且<span class="math inline">N\leq
+H</span>，同态基本定理得<span class="math inline">G/N\cong {\rm
+Im}\phi\leq S(G/_LH)</span>，立得<span
+class="math inline">[G:N]|n!</span>。</p>
+<h4
+id="重要推论若p是g的最小质因子且子群hleq-g满足ghp则hunlhd-g">重要推论：若<span
+class="math inline">p</span>是<span
+class="math inline">|G|</span>的最小质因子且子群<span
+class="math inline">H\leq G</span>满足<span
+class="math inline">[G:H]=p</span>，则<span class="math inline">H\unlhd
+G</span></h4>
+<p>这是因为由前述结论，存在<span class="math inline">K\leq
+H</span>使得<span class="math inline">K\unlhd G</span>且<span
+class="math inline">[G:K]|p!</span>，由<span
+class="math inline">p</span>是最小质因子的假设，必有<span
+class="math inline">[G:K]|p</span>，而显然<span
+class="math inline">p|[G:K]</span>，故<span
+class="math inline">[G:K]=p</span>，也就推出<span
+class="math inline">H\unlhd G</span>。</p>
+<h4
+id="重要推论若群g不含指数为2的子群则指数为3的子群一定是正规的">重要推论：若群<span
+class="math inline">G</span>不含指数为<span
+class="math inline">2</span>的子群，则指数为<span
+class="math inline">3</span>的子群一定是正规的。</h4>
+<p>若<span class="math inline">H\leq G</span>且<span
+class="math inline">[G:H]=3</span>，由前述结论，存在<span
+class="math inline">H</span>的子群<span
+class="math inline">N</span>满足<span class="math inline">N\unlhd
+G</span>且<span class="math inline">[G:N]|3!=6</span>。又易知<span
+class="math inline">3|[G:N]</span>，故<span
+class="math inline">[G:N]</span>为<span
+class="math inline">3</span>或<span
+class="math inline">6</span>。若<span
+class="math inline">[G:N]=6</span>，考虑<span
+class="math inline">6</span>阶群<span
+class="math inline">G/N</span>，由前述结论必有<span
+class="math inline">3</span>阶子群<span
+class="math inline">K/N</span>，由对应定理<span
+class="math inline">K</span>是<span
+class="math inline">G</span>的指数为<span
+class="math inline">2</span>的子群，矛盾。于是<span
+class="math inline">[G:N]=3</span>，即<span
+class="math inline">N=H,H\unlhd G</span>。</p>
+<h4 id="设gpn证明对任意hghnh">设<span
+class="math inline">|G|=p^n</span>，证明对任意<span
+class="math inline">H&lt;G</span>，<span
+class="math inline">H&lt;N(H)</span></h4>
+<p>对<span class="math inline">n</span>使用归纳法，<span
+class="math inline">n=0</span>时，定理显然成立。假设定理对<span
+class="math inline">n\leq k</span>成立，考虑类方程可知对群的中心<span
+class="math inline">C=C(G)</span>，有<span
+class="math inline">p\big||C|</span>。则： 1. 若<span
+class="math inline">C\leq H</span>不成立，由于<span
+class="math inline">C\cup H\subseteq N(H)</span>，命题显然成立。 2.
+否则<span class="math inline">C\leq
+H</span>。构造自然同态后对应定理即得<span class="math inline">H/C&lt;
+G/C</span>，根据归纳假设，<span class="math inline">H/C&lt;
+N(H/C)</span>，而<span class="math inline">gC\in
+N(H/C)\Leftrightarrow(\forall h\in H)(gC\cdot hC\cdot
+g^{-1}C=ghg^{-1}C\in H/C)</span> <span
+class="math inline">\Leftrightarrow(\forall h\in H)(ghg^{-1}\in
+H)\Leftrightarrow g\in N(H)</span>，故<span
+class="math inline">N(H/C)=N(H)/C</span>，由对应定理可得<span
+class="math inline">H&lt;N(H)</span>。</p>
+</body>
+</html>

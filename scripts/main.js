@@ -6,6 +6,7 @@ let sig=
   "您可能是个人英雄主义的受害者",
   "三小时工作，八小时休息，剩下的十三小时留给自己",
   "愿我在人生路上偶遇闪光者时，不再会觉得自惭形秽",
+  /*"我深深地动情于这个世界，为清晨自行车把上的每一滴早露，为午后撒在楼梯间的每一缕阳光，为他人穿过01的电子给我带来的每一分理想与感动",*/
 ];
 
 function add_child(father,tname,tclass,ttext)//快速为father添加一个子项
@@ -105,16 +106,21 @@ function to_url_code(str)//因为encode由于奇怪的原因不能转化'#'，�
   let my_second_li=add_child(my_second_list,"li","","");
   my_a=add_child(my_second_li,"a","","OI");
   my_a.setAttribute("href",get_repath()+"study/OI/"+(is_local()?"index.html":""));
-  add_child(my_second_list,"li","","数学");
+  my_second_li=add_child(my_second_list,"li","","");
+  my_a=add_child(my_second_li,"a","","数学");
+  my_a.setAttribute("href",get_repath()+"study/math/"+(is_local()?"index.html":""));
+  // add_child(my_second_list,"li","","数学");
   my_first_li=add_child(my_first_list,"li","","");
   add_child(my_first_li,"span","toggle f-bu","生活");
   my_second_list=add_child(my_first_li,"ul","second-list","");
   my_second_li=add_child(my_second_list,"li","","");
   my_a=add_child(my_second_li,"a","","杂记");
   my_a.setAttribute("href",get_repath()+"life/notes/"+(is_local()?"index.html":""));
+  my_second_li=add_child(my_second_list,"li","","");
+  my_a=add_child(my_second_li,"a","","比赛游记");
+  my_a.setAttribute("href",get_repath()+"life/records/"+(is_local()?"index.html":""));
   add_child(my_second_list,"li","","板绘");
   add_child(my_second_list,"li","","食堂测评");
-  add_child(my_second_list,"li","","美图收藏");
   my_first_li=add_child(my_first_list,"li","","");
   my_a=add_child(my_first_li,"a","","荣誉陈列架");
   my_a.setAttribute("href",get_repath()+"gallery/"+(is_local()?"index.html":""));
