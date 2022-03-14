@@ -86,11 +86,14 @@ for(let i=0;i<gallery_data.length;i++)
 }
 
 let bgm=add_child(document.querySelector(".main-box"),"audio","bgm","");
-bgm.autoplay="true";
-if(is_local())
-    bgm.controls="controls";
+// if(is_local())
+//     bgm.controls="controls";
 bgm.src="audio/sys_ccs7_intro.wav";
 bgm.onended=function(){
     bgm.src="audio/sys_ccs7_loop.wav";
+    bgm.autoplay="true";
     bgm.loop="true";
 };
+
+document.querySelector(".music-button").style.display="block";
+//本页面启动音乐播放按钮

@@ -87,12 +87,15 @@ a:hover
   
   padding-left: 7.5%;
   padding-right: 7.5%;
+  padding-bottom: 2.5%;
   text-align: center;
 }
 /*签名*/
 
 .first-list
 {
+  margin-top: 2.5%;
+  margin-bottom: 0%;
   font-size: 1.8vw;
 }
 
@@ -191,6 +194,14 @@ a:hover
   padding: 0%;
   width: 100%;
 }
+
+.music-button
+{
+  display: block;
+  margin: 0% auto;
+  width: 15%;
+}
+/*音乐播放按钮*/
 
 .bgm
 {

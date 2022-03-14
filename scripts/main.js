@@ -94,6 +94,11 @@ function to_url_code(str)//因为encode由于奇怪的原因不能转化'#'，�
   // my_navigation.appendChild(my_signature);
   // let my_first_list=document.createElement("ul");
   // my_first_list.className="first-list";
+  let my_music_button=add_child(my_navigation,"img","music-button f-bu","");
+  my_music_button.src=get_repath()+"images/start.png";
+  my_music_button.style.display="none";
+  
+
   let my_first_list=add_child(my_navigation,"ul","first-list","");
   // let my_li=document.createElement("li");
   let my_first_li=add_child(my_first_list,"li","","");
@@ -133,6 +138,22 @@ $(document).ready(function(){$(".toggle").next().hide();});
 //侧边列表默认收缩
 $(document).ready(function(){$(".toggle").click(function(){$(this).next().slideToggle();});});
 //侧边列表点击可以展开/收缩子项
+
+
+$(document).ready(function(){$(".music-button").click(function(){
+  let bg=document.querySelector(".bgm");
+  if($(this).attr("src")===get_repath()+"images/start.png")
+  {
+      bg.play();
+      $(this).attr("src",get_repath()+"images/stop.png");
+  }
+  else
+  {
+      bg.pause();
+      $(this).attr("src",get_repath()+"images/start.png");
+  }
+});});
+//音乐播放按钮，在有音乐时会控制背景音乐播放
 
 add_child(document.querySelector("body"),"div","main-box","");
 
