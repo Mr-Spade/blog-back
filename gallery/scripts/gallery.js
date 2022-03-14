@@ -84,3 +84,13 @@ for(let i=0;i<gallery_data.length;i++)
     write_gallery(i);
     //add_child(document.querySelector(".main-box"),"div","small-div","aaa");
 }
+
+let bgm=add_child(document.querySelector(".main-box"),"audio","bgm","");
+bgm.autoplay="true";
+if(is_local())
+    bgm.controls="controls";
+bgm.src="audio/sys_ccs7_intro.wav";
+bgm.onended=function(){
+    bgm.src="audio/sys_ccs7_loop.wav";
+    bgm.loop="true";
+};

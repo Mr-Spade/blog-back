@@ -191,3 +191,10 @@ a:hover
   padding: 0%;
   width: 100%;
 }
+
+.bgm
+{
+  display: block;
+  margin: auto auto;
+}
+/*设置背景音乐的格式*/
